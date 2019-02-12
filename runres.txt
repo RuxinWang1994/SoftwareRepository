@@ -1,0 +1,64 @@
+
+  Testing SoftwareRepository
+ ============================
+
+  Demonstrating check-in
+ ------------------------
+check-in package -- TestPackage, metadatas:
+                                1)filesdepends are: "README";
+                                2)categories are: "cpp", "h"
+                                3)description: "This is a package whith open check-in"
+                                4)author: "gary"
+../TestPackage/main.cpp ==copy to==> ../TestPackage/.rep/main.cpp.1
+../TestPackage/main.h ==copy to==> ../TestPackage/.rep/main.h.1
+../TestPackage/README ==copy to==> ../TestPackage/.rep/README.1
+
+  Key            Name           DateTime                  Description         Payload
+  -------------  -------------  ------------------------  ------------------  ------------------
+  main.cpp.1     gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README
+  main.h.1       gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README
+  README.1       gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README  passed -- "Check-in"
+
+  Demonstrating check-out
+ -------------------------
+../TestPackage/.rep/main.cpp.1== copy to ==>../TestPackage/main.cpp
+../TestPackage/.rep/main.h.1== copy to ==>../TestPackage/main.h
+../TestPackage/.rep/README.1== copy to ==>../TestPackage/README
+  passed -- "Check-out"
+
+  Demonstrating browse
+ ----------------------
+query files with author "gary"
+  Key            Name           DateTime                  Description         Payload
+  -------------  -------------  ------------------------  ------------------  ------------------
+  main.cpp.1     gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README
+  main.h.1       gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README
+  README.1       gary           Tue Mar  6 08:16:50 2018  This is a package   ../TestPackage/.re
+    child keys:  README
+../TestPackage//.rep/main.cpp.1
+file -- ../TestPackage//.rep/main.cpp.1 contents:
+int main() {    return 0; }
+----------------------------
+../TestPackage//.rep/main.h.1
+file -- ../TestPackage//.rep/main.h.1   contents:
+#pragma once
+----------------------------
+../TestPackage//.rep/README.1
+file -- ../TestPackage//.rep/README.1   contents:
+init repository
+----------------------------
+  passed -- "Browse"
+
+  Demonstrating version
+ -----------------------
+Show me all version of file main.cpp
+main.cpp.1 => 1
+
+  passed -- "Version"
+
+  all tests passed
